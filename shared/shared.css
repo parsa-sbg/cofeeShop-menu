@@ -1,0 +1,10 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    box-sizing: border-box;
+}

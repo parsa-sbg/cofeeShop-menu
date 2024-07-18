@@ -1,0 +1,54 @@
+
+
+
+/* start header */
+
+
+
+/* end header */
+
+.header{
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    left: 0;
+}
+
+.swiper{
+    border-radius: 3rem;
+    padding: 1rem 0 !important;
+    backdrop-filter: blur(50px);
+    user-select: none;
+}
+
+.swiper-slide{
+    font-size: 2rem;
+}
+
+.cat-item{
+    min-width: 15rem;
+    min-height: 5rem;
+    text-wrap: nowrap;
+    text-align: center;
+    color: antiquewhite;
+    background-color: #00010019 ;
+    border-radius: 3rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+
+}
+
+.cat-item--active{
+    border: 3px solid #341900;
+    background-color: #0001006a ;
+}
+/* start home */
+
+.home{
+    height: 100vh;
+    background-image: url('../public/header-bg.jpg');
+    background-size: cover;
+    background-position: center
+}
+
+/* end home */
