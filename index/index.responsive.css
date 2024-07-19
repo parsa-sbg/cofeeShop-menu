@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1200px) {}
+
+@media only screen and (max-width: 992px) {
+
+    .menu__title::after,
+    .menu__title::before {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .menu__title::after,
+    .menu__title::before {
+        width: 10rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {}

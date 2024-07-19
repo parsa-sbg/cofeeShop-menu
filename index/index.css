@@ -3,10 +3,6 @@
 
 /* start header */
 
-
-
-/* end header */
-
 .header{
     position: fixed;
     top: 1rem;
@@ -16,8 +12,9 @@
 
 .swiper{
     border-radius: 3rem;
-    padding: 1rem 0 !important;
-    backdrop-filter: blur(50px);
+    padding: 1rem 2rem !important;
+    backdrop-filter: blur(3px);
+    background-color: var(--header-bg);
     user-select: none;
 }
 
@@ -25,30 +22,128 @@
     font-size: 2rem;
 }
 
-.cat-item{
+.header-item{
     min-width: 15rem;
     min-height: 5rem;
     text-wrap: nowrap;
     text-align: center;
-    color: antiquewhite;
+    color: var(--text-color);
     background-color: #00010019 ;
     border-radius: 3rem;
     padding: .5rem 1rem;
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.cat-item--active{
-    border: 3px solid #341900;
-    background-color: #0001006a ;
+.header-item--active{
+    border: 3px solid var(--header-bg);
+    background-color: #b5bbc26a ;
 }
+
+/* end header */
+
+
 /* start home */
 
 .home{
     height: 100vh;
-    background-image: url('../public/header-bg.jpg');
-    background-size: cover;
-    background-position: center
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home__title{
+    text-align: center;
+    font-size: 5rem;
+    color: var(--text-color);
+    z-index: -1;
 }
 
 /* end home */
+
+/* start menus */
+
+.menus{
+
+}
+.menu{
+
+}
+.menu__title-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu__title{
+    position: relative;
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    z-index: -1;
+}
+.menu__title::after,
+.menu__title::before{
+    content: "";
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+
+    width: 30rem;
+    height: .5rem;
+    border-radius: 3rem;
+    background-color: var(--text-color);
+}
+.menu__title::after{
+    left: 120%;
+}
+.menu__title::before{
+    right: 120%;
+}
+
+.menu__items{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.menu__item{
+    display: flex;
+    padding: 2rem;
+    border-radius: 2rem;
+    gap: 1rem;
+    height: 18rem;
+    background-color: var(--header-bg);
+    margin: .75rem 0;
+}
+.menu__item-image-wrapper{
+
+}
+.menu__item-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+.menu__item-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.menu__item-title{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.menu__item-desc{
+
+}
+.menu__item-price{
+
+}
+
+/* end menus */
