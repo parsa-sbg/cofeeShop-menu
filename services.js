@@ -12,32 +12,27 @@ const getAllCats = async () => {
     return data
 }
 
-const login = async () => {
-    console.log(supabase);
+
+const login = async (userName, password) => {
 
     const res = await supabase.auth.signInWithPassword({
-        email: 'parsa.sbg@gmail.com',
-        password: '95157753',
-      })
+        email: userName,
+        password: password,
+    })
 
-      console.log(res);
+    return res
+}
 
-      console.log(supabase);
+
+const logOut = async () => {
+    const res = await supabase.auth.signOut()
+    console.log(res);
 }
 
 const getMe = async () => {
     const { data: { user } } = await supabase.auth.getUser()
-    console.log(user);
-}
 
-const addAdmin = async () => {
-    const res = await supabase.auth.admin.createUser({
-        email: 'parsa.sbg@gmail.com',
-        password: '95157753',
-        user_metadata: { name: 'Yoda' }
-      })
-
-      console.log(res);
+    return user
 }
 
 
@@ -45,6 +40,6 @@ export {
     getAllCats,
     login,
     getMe,
-    addAdmin
+    logOut
 }
 

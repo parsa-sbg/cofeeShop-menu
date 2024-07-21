@@ -1,8 +1,5 @@
-import { getAllCats , login , getMe, addAdmin} from "../services.js";
+import { getAllCats , login , getMe} from "../services.js";
 
-// login()
-getMe()
-addAdmin()
 
 const data = await getAllCats()
 console.log(data);
