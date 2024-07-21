@@ -1,10 +1,11 @@
-import { getAllCats } from "../services.js";
+import { getAllCats , login , getMe, addAdmin} from "../services.js";
+
+// login()
+getMe()
+addAdmin()
 
 const data = await getAllCats()
-
 console.log(data);
-
-
 
 const swiper = new Swiper('.swiper', {
   // Optional parameters
