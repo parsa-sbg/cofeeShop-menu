@@ -1,0 +1,151 @@
+@import '/shared/shared.css';
+
+
+
+
+.menus{
+
+}
+.menus-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.accordion-box{
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.accordion-box__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--header-bg);
+    padding-bottom: 2rem;
+    gap: 2rem;
+
+    cursor: n-resize;
+}
+.accordion-box__header-title{
+    font-size: 3rem;
+    gap: 3rem;
+
+}
+
+.accordion-box__header-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accordion-box__header-btns button {
+    min-width: 7rem;
+}
+
+.accordion-box__header-icon{
+    display: flex !important;
+    align-items: center !important;
+    transition: all 200ms ease;
+    width: fit-content;
+    max-width: 2rem;
+
+}
+
+.accordion-box__header-icon--rotate{
+    transform: rotate(180deg);
+}
+
+.accordion-box__panel{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+
+    transition: all 500ms ease;
+}
+
+.accordion-box__panel--open{
+    margin-top: 2rem;
+    max-height: 200rem;
+}
+
+.accordion-box__item{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--header-bg);
+    margin: .75rem 0;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.accordion-box__item-top{
+    display: flex;
+    gap: 1rem;
+}
+
+.accordion-box__image-wrapper{
+
+}
+.accordion-box__image{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+.accordion-box__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.accordion-box__title{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.accordion-box__desc{
+
+}
+.accordion-box__price{
+
+}
+
+.accordion-box__item-bottom{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.accordion-box__item-delbtn,
+.accordion-box__header-delbtn{
+    border: none;
+    flex-basis: 32%;
+    font-size: 2rem;
+    padding: .8rem 1rem;
+    border-radius: 2rem;
+    background-color: rgb(255, 101, 101);
+    transition:all 200ms ease;
+}
+.accordion-box__item-editbtn,
+.accordion-box__header-editbtn{
+    border: none;
+    flex-basis: 32%;
+    font-size: 2rem;
+    padding: .8rem 1rem;
+    border-radius: 2rem;    
+    background-color: rgb(255, 210, 126);
+    transition:all 200ms ease;
+}
+
+.accordion-box__item-delbtn:hover,
+.accordion-box__header-delbtn:hover{
+    background-color: rgb(255, 47, 47);
+}
+.accordion-box__item-editbtn:hover,
+.accordion-box__header-editbtn:hover{
+    background-color: rgb(255, 185, 56);
+}
