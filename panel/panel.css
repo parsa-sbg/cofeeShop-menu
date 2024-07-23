@@ -233,7 +233,9 @@ svg{
     border: 1px solid var(--text-color);
     padding: .5rem 1rem;
 }
-.cat-form__submit-btn{
+.cat-form__add-submit-btn,
+.cat-form__edit-submit-btn{
+    display: none;
     width: 100%;
     max-width: 20rem;
     border: 1px solid var(--text-color);

@@ -1,15 +1,17 @@
-import { getMe, addNewCat, getAllCats , deleteCat , updateCat } from "../services.js"
+import { getMe, addNewCat, getAllCats, deleteCat, updateCat } from "../services.js"
 
 
 
 const catForm = document.querySelector('.cat-form')
 const catFormCancelElem = document.querySelector('.cat-form__cancel')
 const catFormTitleElem = document.querySelector('.cat-form__title')
-const catFormSubmitBtn = document.querySelector('.cat-form__submit-btn')
+const catFormAddSubmitBtn = document.querySelector('.cat-form__add-submit-btn')
+const catFormEditSubmitBtn = document.querySelector('.cat-form__edit-submit-btn')
 const catFormNameInput = document.querySelector('.cat-form__name-input')
 const addCatBtn = document.querySelector('.add-category-btn')
 const menusWrapper = document.querySelector('.menus-wrapper')
 
+let catId = null
 
 
 const handleOpenAccordions = () => {
@@ -116,7 +118,7 @@ const getAndShowAllCatsAndItems = async () => {
                                 
                                 `).join('')
 
-                            : '<div class="alert alert-danger" >هیج آیتمی اضافه نشده</div>'}
+                : '<div class="alert alert-danger" >هیج آیتمی اضافه نشده</div>'}
                                     </div>
                                     
 
@@ -129,7 +131,10 @@ const getAndShowAllCatsAndItems = async () => {
 
 }
 
-const showCatModal = (action, catId,catName) => {
+const showCatModal = (action, categoryId, catName) => {
+
+    catId = categoryId
+
 
     catFormCancelElem.addEventListener('click', () => closeCatModal())
 
@@ -137,34 +142,14 @@ const showCatModal = (action, catId,catName) => {
         catFormTitleElem.innerHTML = 'ویرایش دسته بندی'
         catFormNameInput.value = catName
 
-        catFormSubmitBtn.addEventListener('click', async e => {
-            e.preventDefault()
+        catFormAddSubmitBtn.style.display = 'none'
+        catFormEditSubmitBtn.style.display = 'block'
 
-            if (catFormNameInput.value.trim()) {
-                const res = await updateCat(catId, catFormNameInput.value.trim())
-                if (res.status == 200) {
-                    alert('دسته بندی با موفقیت آپدیت شد.')
-                    closeCatModal()
-                }
-            }
-        })
 
     } else {
         catFormTitleElem.innerHTML = 'افزودن دسته بندی'
-        catFormSubmitBtn.addEventListener('click', async e => {
-            e.preventDefault()
-
-            if (catFormNameInput.value.trim()) {
-                const res = await addNewCat(catFormNameInput.value.trim())
-                if (res.status == 201) {
-                    alert('دسته بندی شما با موفقیت ایجاد شد.')
-                    closeCatModal()
-                    getAndShowAllCatsAndItems()
-                }
-
-            }
-
-        })
+        catFormEditSubmitBtn.style.display = 'none'
+        catFormAddSubmitBtn.style.display = 'block'
     }
 
     catForm.classList.add('cat-form--show')
@@ -182,6 +167,37 @@ const removeCat = async (catId) => {
 
 
 ///////////////////////////////////////////// events /////////////////////////////////////////////
+
+
+// add and edit category btns
+
+catFormAddSubmitBtn.addEventListener('click', async e => {
+    e.preventDefault()
+
+    if (catFormNameInput.value.trim()) {
+        const res = await addNewCat(catFormNameInput.value.trim())
+        if (res.status == 201) {
+            alert('دسته بندی شما با موفقیت ایجاد شد.')
+            closeCatModal()
+            getAndShowAllCatsAndItems()
+        }
+
+    }
+
+})
+
+catFormEditSubmitBtn.addEventListener('click', async e => {
+    e.preventDefault()
+
+    if (catFormNameInput.value.trim()) {
+        const res = await updateCat(catId, catFormNameInput.value.trim())
+        if (res.status == 200) {
+            alert('دسته بندی با موفقیت آپدیت شد.')
+            closeCatModal()
+            getAndShowAllCatsAndItems()
+        }
+    }
+})
 
 
 
