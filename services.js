@@ -12,6 +12,18 @@ const getAllCats = async () => {
     return data
 }
 
+const addNewCat = async (newCatName) => {
+
+    const res = await supabase
+        .from('categories')
+        .insert([
+            { name: newCatName },
+        ])
+        .select()
+
+        return res
+}
+
 
 const login = async (userName, password) => {
 
@@ -40,6 +52,7 @@ export {
     getAllCats,
     login,
     getMe,
-    logOut
+    logOut,
+    addNewCat
 }
 

@@ -11,7 +11,8 @@
 }
 
 @media only screen and (max-width: 576px) {
-    .accordion-box{
+    .accordion-box,
+    .add-category-btn{
         padding: 1rem;
     }
 }
