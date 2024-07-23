@@ -1,7 +1,10 @@
 @import '/shared/shared.css';
 
 
-
+svg{
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
 .menus{
 
@@ -67,7 +70,7 @@
 }
 
 .accordion-box__header-btns button {
-    min-width: 7rem;
+    /* min-width: 7rem; */
 }
 
 .accordion-box__header-icon{
@@ -147,10 +150,12 @@
 }
 .accordion-box__item-delbtn,
 .accordion-box__header-delbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     flex-basis: 32%;
-    font-size: 2rem;
-    padding: .8rem 1rem;
+    padding: .8rem;
     border-radius: 2rem;
     background-color: rgb(255, 101, 101);
     transition:all 200ms ease;
@@ -158,12 +163,27 @@
 .accordion-box__item-editbtn,
 .accordion-box__header-editbtn{
     border: none;
-    flex-basis: 32%;
-    font-size: 2rem;
-    padding: .8rem 1rem;
+    padding: .8rem;
     border-radius: 2rem;    
+    flex-basis: 32%;
     background-color: rgb(255, 210, 126);
     transition:all 200ms ease;
+}
+
+.accordion-box__header-addbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: .8rem;
+    border-radius: 2rem;
+    flex-basis: 32%;
+    background-color: rgb(105, 255, 150);
+    transition:all 200ms ease;
+}
+
+.accordion-box__header-addbtn:hover{
+    background-color: rgb(41, 255, 105);
 }
 
 .accordion-box__item-delbtn:hover,

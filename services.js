@@ -21,7 +21,30 @@ const addNewCat = async (newCatName) => {
         ])
         .select()
 
+    return res
+}
+
+const deleteCat = async (catId) => {
+
+    const res = await supabase
+        .from('categories')
+        .delete()
+        .eq('id', catId)
+
+    return res
+
+}
+
+const updateCat = async (catId, newCatName) => {
+
+    const res = await supabase
+        .from('categories')
+        .update({ name: newCatName })
+        .eq('id', catId)
+        .select()
+
         return res
+
 }
 
 
@@ -53,6 +76,8 @@ export {
     login,
     getMe,
     logOut,
-    addNewCat
+    addNewCat,
+    deleteCat,
+    updateCat
 }
 
