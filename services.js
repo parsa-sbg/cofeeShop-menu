@@ -48,9 +48,11 @@ const updateCat = async (catId, newCatName) => {
 }
 
 const uploadImage = async (file) => {
-    await supabase.storage
+    const uploadRes = await supabase.storage
         .from('images')
         .upload(file.name, file);
+
+    console.log(uploadRes);
 
     const res = supabase
         .storage
@@ -73,6 +75,23 @@ const addNewItem = async (name, description, price, image_url, category_id) => {
                 category_id
             },
         ])
+        .select()
+
+    return res
+
+}
+
+const updateItem = async (id, name, description, price, image_url) => {
+
+    const res = await supabase
+        .from('items')
+        .update({
+            name,
+            description,
+            price,
+            image_url
+        })
+        .eq('id', id)
         .select()
 
     return res
@@ -122,6 +141,7 @@ export {
     updateCat,
     addNewItem,
     uploadImage,
-    deleteItem
+    deleteItem,
+    updateItem
 }
 
