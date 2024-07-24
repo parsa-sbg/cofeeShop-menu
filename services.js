@@ -43,10 +43,52 @@ const updateCat = async (catId, newCatName) => {
         .eq('id', catId)
         .select()
 
-        return res
+    return res
 
 }
 
+const uploadImage = async (file) => {
+    await supabase.storage
+        .from('images')
+        .upload(file.name, file);
+
+    const res = supabase
+        .storage
+        .from('images')
+        .getPublicUrl(file.name)
+
+    return res.data.publicUrl
+}
+
+const addNewItem = async (name, description, price, image_url, category_id) => {
+
+    const res = await supabase
+        .from('items')
+        .insert([
+            {
+                name,
+                description,
+                price,
+                image_url,
+                category_id
+            },
+        ])
+        .select()
+
+    return res
+
+}
+
+const deleteItem = async (itemId) => {
+
+    const res = await supabase
+        .from('items')
+        .delete()
+        .eq('id', itemId)
+
+    return res
+
+}
 
 const login = async (userName, password) => {
 
@@ -57,7 +99,6 @@ const login = async (userName, password) => {
 
     return res
 }
-
 
 const logOut = async () => {
     const res = await supabase.auth.signOut()
@@ -78,6 +119,9 @@ export {
     logOut,
     addNewCat,
     deleteCat,
-    updateCat
+    updateCat,
+    addNewItem,
+    uploadImage,
+    deleteItem
 }
 
