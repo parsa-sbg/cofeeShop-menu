@@ -216,6 +216,7 @@ svg{
     backdrop-filter: blur(10px);
     width: 100%;
     height: 100%;
+    overflow: scroll;
 }
 .cat-form--show,
 .item-form--show{
@@ -235,6 +236,12 @@ input,
     border: 1px solid var(--text-color);
     padding: .5rem 1rem;
 }
+
+.item-form__desc-input{
+    height: 6rem !important;
+    resize: none;
+}
+
 .cat-form__add-submit-btn,
 .cat-form__edit-submit-btn,
 .item-form__add-submit-btn,
