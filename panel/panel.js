@@ -1,4 +1,4 @@
-import { getMe, addNewCat, getAllCats, deleteCat, updateCat, addNewItem , uploadImage, deleteItem} from "../services.js"
+import { getMe, addNewCat, getAllCats, deleteCat, updateCat, addNewItem, uploadImage, deleteItem } from "../services.js"
 
 
 const menusWrapper = document.querySelector('.menus-wrapper')
@@ -90,6 +90,11 @@ const closeCatModal = () => {
 const closeItemModal = () => {
     itemForm.classList.remove('item-form--show')
     itemFormNameInput.value = null
+    itemFormPriceInput.value = null
+    itemFormDescInput.value = null
+    itemFormImageInput.value = null
+    catId = null
+    image = null
 }
 
 const getAndShowAllCatsAndItems = async () => {
