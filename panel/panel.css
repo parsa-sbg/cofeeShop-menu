@@ -217,24 +217,28 @@ svg{
     width: 100%;
     height: 100%;
 }
-.cat-form--show{
+.cat-form--show,
+.item-form--show{
     display: flex;
-
 }
 
-.cat-form__title{
+.cat-form__title,
+.item-form__title{
     font-size: 2.5rem;
     font-weight: bold;
 }
 
-.cat-form__name-input{
+input,
+.item-form__desc-input{
     border-radius: 1rem;
     outline: none;
     border: 1px solid var(--text-color);
     padding: .5rem 1rem;
 }
 .cat-form__add-submit-btn,
-.cat-form__edit-submit-btn{
+.cat-form__edit-submit-btn,
+.item-form__add-submit-btn,
+.item-form__edit-submit-btn{
     display: none;
     width: 100%;
     max-width: 20rem;
@@ -242,13 +246,15 @@ svg{
     border-radius: 1rem;
     padding: .5rem 1rem;
 }
-.cat-form__cancel{
+.cat-form__cancel,
+.item-form__cancel{
     text-decoration: line-through;
     word-spacing: .5rem;
     color: #4c4c4c;
     cursor: pointer;
 }
-.cat-form__cancel:hover{
+.cat-form__cancel:hover,
+.item-form__cancel:hover{
     color: var(--text-color);
 }
 
@@ -256,14 +262,4 @@ svg{
     display: flex;
     flex-direction: column;   
     gap: .5rem;
-}
-
-
-
-
-.item-form{
-
-}
-.item-form--show{
-
 }
