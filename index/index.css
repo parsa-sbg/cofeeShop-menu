@@ -36,6 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 
 }
 
@@ -78,6 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 5rem;
 }
 .menu__title{
     position: relative;
@@ -121,6 +123,9 @@
     height: 18rem;
     background-color: var(--header-bg);
     margin: .75rem 0;
+
+    z-index: -1 !important;
+    position: relative !important;
 }
 .menu__item-image-wrapper{
     width: 12rem;
