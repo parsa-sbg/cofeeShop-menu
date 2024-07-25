@@ -118,8 +118,8 @@ svg{
 }
 
 .accordion-box__image-wrapper{
-    max-width: 14rem;
-    max-height: 14rem;
+    width: 12rem;
+    height: 14rem;
 }
 .accordion-box__image{
     width: 100%;

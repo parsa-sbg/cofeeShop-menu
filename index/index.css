@@ -123,6 +123,8 @@
     margin: .75rem 0;
 }
 .menu__item-image-wrapper{
+    width: 12rem;
+    height: 14rem;
 
 }
 .menu__item-image{

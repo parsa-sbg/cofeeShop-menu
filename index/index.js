@@ -1,5 +1,7 @@
 import { getAllCats, login, getMe } from "../services.js";
 
+
+
 const menusContainer = document.querySelector('.menus .container')
 
 
@@ -23,7 +25,7 @@ const getAndShowAllMenus = async () => {
                           
                           `
                             <div class="col-12 col-lg-6">
-                                <div class="menu__item">
+                                <div data-aos="fade-left" data-aos-once="true" class="menu__item">
                                     <div class="menu__item-image-wrapper">
                                         <img class="menu__item-image" src=${item.image_url} alt="image">
                                     </div>
