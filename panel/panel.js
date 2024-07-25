@@ -290,7 +290,7 @@ itemFormAddSubmitBtn.addEventListener('click', async (event) => {
     const newItemPrice = itemFormPriceInput.value.trim()
     const newItemDesc = itemFormDescInput.value.trim()
 
-    if (newItemDesc && newItemPrice && newItemName && catId && image) {
+    if (newItemPrice && newItemName && catId && image) {
 
         const url = await uploadImage(image)
 
@@ -329,7 +329,7 @@ itemFormEditSubmitBtn.addEventListener('click', async event => {
 
 
 
-    if (newName && newDesc && newPrice) {
+    if (newName && newPrice) {
         const res = await updateItem(itemId, newName, newDesc, newPrice, newImageUrl)
         console.log(res);
         if (res.status == 200) {
