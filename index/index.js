@@ -121,7 +121,7 @@ window.addEventListener('load', async () => {
   const observerOptions = {
     root: null,
     rootMargin: '-200px',
-    threshold: .1
+    threshold: 0
   }
 
   let activeElem = null
