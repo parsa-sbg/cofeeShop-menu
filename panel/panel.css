@@ -106,7 +106,8 @@ svg{
 .accordion-box__item{
     display: flex;
     flex-direction: column;
-    background-color: var(--header-bg);
+    background-color: var(--box-color);
+    color: var(--app-bg-color);
     margin: .75rem 0;
     border-radius: 2rem;
     padding: 2rem;

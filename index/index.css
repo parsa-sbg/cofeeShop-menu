@@ -16,6 +16,7 @@
     backdrop-filter: blur(3px);
     background-color: var(--header-bg);
     user-select: none;
+    margin: 0 2rem !important;
 }
 
 .swiper-slide{
@@ -27,8 +28,8 @@
     min-height: 5rem;
     text-wrap: nowrap;
     text-align: center;
-    color: var(--text-color);
-    background-color: #00010019 ;
+    color: var(--app-bg-color);
+    background-color: var(--box-color) ;
     border-radius: 3rem;
     padding: .5rem 1rem;
     cursor: pointer;
@@ -42,7 +43,8 @@
 
 .header-item--active{
     border: 3px solid var(--header-bg);
-    background-color: #b5bbc26a ;
+    background-color: #1D24CA ;
+    color: var(--app-bg-color);
 }
 
 /* end header */
@@ -80,6 +82,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 5rem;
+    color: var(--text-color);
 }
 .menu__title{
     position: relative;
@@ -121,8 +124,9 @@
     border-radius: 2rem;
     gap: 1rem;
     height: 18rem;
-    background-color: var(--header-bg);
+    background-color: var(--box-color);
     margin: .75rem 0;
+    color: var(--app-bg-color);
 
     z-index: -1 !important;
     position: relative !important;

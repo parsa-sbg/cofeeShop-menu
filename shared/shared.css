@@ -4,10 +4,15 @@
 :root {
     font-size: 10px;
 
-    --text-color: #000;
-    --app-bg-color: #eaf0ff;
-    --box-color: #646464;
-    --header-bg: #4d75b17c;
+    /* --text-color: #021526;
+    --app-bg-color: #D6EFD8;
+    --box-color: #80AF81;
+    --header-bg: #508D4E; */
+
+    --text-color: #333;
+    --app-bg-color: #EEEEEE;
+    --box-color: #2E236C;
+    --header-bg: #17153B;
 }
 
 *,
@@ -18,8 +23,8 @@
 
 body {
     font-size: 1.6rem;
-
     background-color: var(--app-bg-color);
+    overflow-x: hidden;
 }
 
 section{
