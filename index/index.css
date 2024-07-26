@@ -43,7 +43,7 @@
 
 .header-item--active{
     /* border: 3px solid var(--app-bg-color); */
-    background-color: #d07d39 ;
+    background-color: #f4b1b6 ;
     color: var(--text-color);
     font-weight: bold;
 }
