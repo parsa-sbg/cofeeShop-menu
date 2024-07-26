@@ -28,8 +28,8 @@
     min-height: 5rem;
     text-wrap: nowrap;
     text-align: center;
-    color: var(--app-bg-color);
-    background-color: var(--box-color) ;
+    color: var(--text-color);
+    background-color: var(--app-bg-color) ;
     border-radius: 3rem;
     padding: .5rem 1rem;
     cursor: pointer;
@@ -42,9 +42,10 @@
 }
 
 .header-item--active{
-    border: 3px solid var(--header-bg);
-    background-color: #1D24CA ;
-    color: var(--app-bg-color);
+    /* border: 3px solid var(--app-bg-color); */
+    background-color: var(--box-color) ;
+    color: var(--text-color);
+    font-weight: bold;
 }
 
 /* end header */
@@ -126,7 +127,7 @@
     height: 18rem;
     background-color: var(--box-color);
     margin: .75rem 0;
-    color: var(--app-bg-color);
+    color: var(--text-color);
 
     z-index: -1 !important;
     position: relative !important;
