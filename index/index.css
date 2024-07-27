@@ -1,5 +1,7 @@
 
-
+body{
+    position: relative;
+}
 
 /* start header */
 
@@ -8,6 +10,7 @@
     top: 1rem;
     right: 0;
     left: 0;
+    z-index: 2000;
 }
 
 .swiper{
@@ -61,12 +64,22 @@
     justify-content: center;
 }
 
-.home__title{
-    text-align: center;
-    font-size: 5rem;
-    color: var(--text-color);
-    z-index: -1;
+.home-wrapper{
+    display: flex;
+    justify-content: center;
+    
+    
 }
+.home-wrapper svg{
+    width: 39rem;
+    height: 10rem;
+
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--text-color);
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
 
 /* end home */
 
@@ -159,3 +172,11 @@
 }
 
 /* end menus */
+
+.random-image{
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    z-index: -10;
+
+}

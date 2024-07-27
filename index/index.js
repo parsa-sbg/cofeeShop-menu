@@ -1,4 +1,5 @@
-import { getAllCats } from "../services.js"; // Only importing necessary functions
+import { getAllCats } from "../services.js";
+import imageUrls from '../index/imagesUrl.js'
 
 const menusContainer = document.querySelector('.menus .container');
 const headerSwiper = document.querySelector('.swiper-wrapper');
@@ -61,8 +62,47 @@ const getSwiperSlideIndexByInnerId = (id) => {
   return [...allSwiperSlides].findIndex(slide => slide.childNodes[1].id === id);
 };
 
+const getRandomPosition = (container) => {
+  const containerWidth =  container.offsetWidth
+  const containerHeight =  container.clientHeight
+
+
+  const x = Math.floor(Math.random() * (containerWidth)); // 50 is the width of the image
+  const y = Math.floor(Math.random() * (containerHeight)); // 50 is the height of the image
+  return { x, y };
+};
+
+const addRandomImagesToContainer = (container, count) => {
+  container.style.position = 'relative'
+
+  for (let i = 0; i < count; i++) { 
+
+    const {x, y} = getRandomPosition(container)
+    const img = document.createElement('img')
+    img.className= 'random-image'
+    img.src = imageUrls[Math.floor(Math.random() * imageUrls.length)]
+    img.style.left = `${x}px`
+    img.style.top = `${y}px`
+
+    container.appendChild(img)
+  }
+
+}
+
 window.addEventListener('load', async () => {
+  
   await getAndShowAllMenus();
+
+  // add random images to body, home section and menu titles
+  addRandomImagesToContainer(document.body, 5)
+  addRandomImagesToContainer(document.querySelector('.home'), 5)
+  document.querySelectorAll('.menu__title-wrapper').forEach(elem => {
+    addRandomImagesToContainer(elem, 1)
+  })
+
+  addRandomImagesToContainer(document.querySelector('.menu__title-wrapper'), 2)
+
+
   allSwiperSlides = document.querySelectorAll('.swiper-slide');
 
   const swiper = new Swiper('.swiper', {
