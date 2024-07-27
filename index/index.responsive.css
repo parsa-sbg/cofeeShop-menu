@@ -12,7 +12,13 @@
 
     .menu__title::after,
     .menu__title::before {
-        width: 10rem;
+        width: 7rem;
+    }
+    .menu__title::after{
+        left: 110%;
+    }
+    .menu__title::before{
+        right: 110%;
     }
 }
 
