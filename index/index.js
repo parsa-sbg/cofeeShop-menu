@@ -7,6 +7,7 @@ const headerSwiper = document.querySelector('.swiper-wrapper')
 
 
 let allSwiperSlides = null
+let isScrolling = false
 
 
 const getAndShowAllMenus = async () => {
@@ -109,7 +110,11 @@ window.addEventListener('load', async () => {
   const allHeaderItems = document.querySelectorAll('.header-item')
   allHeaderItems.forEach(item => {
     item.addEventListener('click', event => {
+      isScrolling = true
       addActiveClassToElemById(event.target.id)
+      setTimeout(() => {
+        isScrolling = false
+      }, 1000);
     })
   })
 
@@ -126,24 +131,25 @@ window.addEventListener('load', async () => {
 
   let activeElem = null
   const observerCallback = (entries) => {
-    const main = entries[0]
+    if (!isScrolling) {
+      const main = entries[0]
 
-    if (main.isIntersecting) {
-      activeElem = main.target
+      if (main.isIntersecting) {
+        activeElem = main.target
+      }
+      let activeElemID = null
+      if (activeElem.className.includes('menu')) {
+        const headerElem = activeElem.querySelector('.menu__title-wrapper')
+        activeElemID = headerElem.id
+  
+      } else {
+        activeElemID = 'home'
+      }
+  
+      addActiveClassToElemById('menuId' + activeElemID)
+      const slideIndex = getSwiperSlideIndexByInnerId('menuId' + activeElemID)
+      swiper.slideTo(slideIndex)
     }
-
-    let activeElemID = null
-    if (activeElem.className.includes('menu')) {
-      const headerElem = activeElem.querySelector('.menu__title-wrapper')
-      activeElemID = headerElem.id
-
-    } else {
-      activeElemID = 'home'
-    }
-
-    addActiveClassToElemById('menuId' + activeElemID)
-    const slideIndex = getSwiperSlideIndexByInnerId('menuId' + activeElemID)
-    swiper.slideTo(slideIndex)
   };
 
   const allObserveSections = document.querySelectorAll('.observe-section')
