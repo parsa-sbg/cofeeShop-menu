@@ -112,8 +112,8 @@ window.addEventListener('load', async () => {
     slideToClickedSlide: true,
     centeredSlides: true,
     breakpoints: {
-      320: { slidesPerView: 2, spaceBetween: 100 },
-      480: { slidesPerView: 3, spaceBetween: 150 },
+      320: { slidesPerView: 2, spaceBetween: 50 },
+      480: { slidesPerView: 3, spaceBetween: 100 },
       640: { slidesPerView: 5, spaceBetween: 150 }
     }
   });

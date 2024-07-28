@@ -119,12 +119,10 @@ svg{
 }
 
 .accordion-box__image-wrapper{
-    width: 12rem;
-    height: 14rem;
 }
 .accordion-box__image{
-    width: 100%;
-    height: 100%;
+    width: 12rem;
+    height: 14rem;
     border-radius: 2rem;
 }
 .accordion-box__content{

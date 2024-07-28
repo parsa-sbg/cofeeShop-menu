@@ -20,6 +20,16 @@
     .menu__title::before{
         right: 110%;
     }
+    .menu__item{
+        padding: 1rem;
+    }
+    .menu__item-title{
+        font-size: 2.1rem;
+    }
+    .menu__item-desc,
+    .menu__item-price {
+        font-size: 1.4rem;
+    }
 }
 
 @media only screen and (max-width: 576px) {}
