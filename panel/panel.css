@@ -217,6 +217,7 @@ svg{
     width: 100%;
     height: 100%;
     overflow: scroll;
+    border: 1px solid var(--box-color);
 }
 .cat-form--show,
 .item-form--show{
@@ -235,6 +236,8 @@ input,
     outline: none;
     border: 1px solid var(--text-color);
     padding: .5rem 1rem;
+    width: 100%;
+    background-color: transparent;
 }
 
 .item-form__desc-input{
@@ -252,6 +255,13 @@ input,
     border: 1px solid var(--text-color);
     border-radius: 1rem;
     padding: .5rem 1rem;
+    transition: all 200ms ease;
+}
+.cat-form__add-submit-btn:hover,
+.cat-form__edit-submit-btn:hover,
+.item-form__add-submit-btn:hover,
+.item-form__edit-submit-btn:hover{
+    background-color: #f4b1b6;
 }
 .cat-form__cancel,
 .item-form__cancel{
