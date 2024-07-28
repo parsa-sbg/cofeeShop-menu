@@ -105,6 +105,9 @@ body{
     margin-top: 5rem;
     margin-bottom: 2rem;
     z-index: -1;
+    padding: 1rem;
+    backdrop-filter: blur(5px);
+    border-radius: 2rem;
 }
 .menu__title::after,
 .menu__title::before{
