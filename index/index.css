@@ -78,6 +78,7 @@ body{
     border: 2px solid var(--text-color);
     border-radius: 2rem;
     padding: 2rem;
+    margin: 0 2rem;
 }
 
 
@@ -134,7 +135,7 @@ body{
 }
 .menu__item{
     display: flex;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 2rem;
     gap: 1rem;
     background-color: var(--box-color);

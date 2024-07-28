@@ -110,7 +110,7 @@ svg{
     color: var(--text-color);
     margin: .75rem 0;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .accordion-box__item-top{

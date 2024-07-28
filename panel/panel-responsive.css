@@ -7,15 +7,16 @@
 
 @media only screen and (max-width: 768px) {
 
-    .accordion-box__item{
-        padding: 1rem;
-    }
     .accordion-box__title{
         font-size: 2.1rem;
     }
     .accordion-box__desc,
     .accordion-box__price{
         font-size: 1.4rem;
+    }
+    .accordion-box__image{
+        width: 10rem;
+        height: 11rem;
     }
     
 }
