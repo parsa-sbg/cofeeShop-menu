@@ -53,7 +53,8 @@ input,
     transition: all 200ms linear;
 }
 
-.login-form__login-btn:hover{
+.login-form__login-btn:hover,
+.modal__btn:hover{
     background-color: #f4b1b6;
 }
 
@@ -82,6 +83,7 @@ input,
 }
 .modal__title{
     font-size: 3rem;
+    text-align: center;
 }
 .modal__btn{
     border: 1px solid var(--text-color);
