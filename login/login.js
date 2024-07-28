@@ -15,7 +15,7 @@ const showModal = (title, btnText, callBack) => {
 
     modalTitle.innerHTML = title
     modalBtn.innerHTML = btnText
-    
+
     modalBtn.addEventListener('click', callBack)
 
     modal.classList.add('modal-box--show')
@@ -23,20 +23,23 @@ const showModal = (title, btnText, callBack) => {
 }
 
 
-loginBtn.addEventListener('click', async () => {
+loginBtn.addEventListener('click', async event => {
+    event.preventDefault()
     const userName = userNameInput.value
     const password = passwordInput.value
 
 
     const res = await login(userName, password)
 
-    console.log(res);
     if (res.data.user) {
-        console.log('yes');
-        showModal('با موفقیت وارد شدید', 'ورود به پنل', () => {location.href = '/panel'})
-    }else{
-        console.log('no');
-        showModal('ایمیل یا رمز عبور درست نیست', 'تلاش مجدد', () => {modal.classList.remove('modal-box--show')})
+        showModal('با موفقیت وارد شدید', 'ورود به پنل', () => { location.href = '/panel' })
+    } else {
+        showModal('ایمیل یا رمز عبور صحیح نیست', 'تلاش مجدد',
+            () => {
+                userNameInput.value = null
+                passwordInput.value = null
+                modal.classList.remove('modal-box--show')
+            })
     }
 
 
