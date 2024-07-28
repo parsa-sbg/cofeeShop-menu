@@ -14,7 +14,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-color: var(--header-bg);
+    background-color: var(--box-color);
+    border: 1px solid var(--text-color);
     padding: 2rem;
     border-radius: 2rem;
 }
@@ -35,7 +36,7 @@ label{
 
 input,
 .login-form__login-btn{
-    border: none;
+    border: 1px solid var(--text-color);
     outline: none;
     height: 3rem;
     width: 100%;
@@ -53,7 +54,7 @@ input,
 }
 
 .login-form__login-btn:hover{
-    background-color: var(--header-bg);
+    background-color: #f4b1b6;
 }
 
 
