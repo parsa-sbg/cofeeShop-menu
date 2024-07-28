@@ -4,6 +4,7 @@
 
 :root {
     font-size: 10px;
+    scroll-behavior: smooth;
 
     /* --text-color: #021526;
     --app-bg-color: #D6EFD8;
